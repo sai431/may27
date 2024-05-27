@@ -23,7 +23,7 @@ export class GithubService {
   private path: string = 'gym/';
   constructor(private http: HttpClient) {
     this.octokit = new Octokit({
-      auth: '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' 
+      auth: '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' 
     });
   }
   retrieveData(username: string): Promise<any> {
