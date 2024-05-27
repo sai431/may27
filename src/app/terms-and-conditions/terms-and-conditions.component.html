@@ -1,0 +1,8 @@
+<div *ngIf="loading">Loading terms and conditions...</div>
+<div *ngIf="!loading">
+  <div [innerHTML]="termsAndConditions"></div>
+  <div>
+    <input type="checkbox" id="agree" (change)="onCheckboxChange($event)">
+    <label for="agree">I agree to the terms and conditions</label>
+  </div>
+</div>

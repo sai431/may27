@@ -1,0 +1,10 @@
+<div *ngFor="let doctor of doctors">
+    <label>{{ doctor.docter3 }}</label>
+ 
+   <!-- <input type="text" [(ngModel)]="doctor.inputText" (change)="readInput(doctor)"> --> 
+   <input type="text" [(ngModel)]="doctor.inputText">
+   <button (click)="readInput(doctor)">Read Input</button>
+   <button (click)="increment()">Increment</button>
+   <button (click)="decrement()">Decrement</button>
+  </div>
+  <app-service-available></app-service-available>

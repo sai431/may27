@@ -1,0 +1,52 @@
+<h2>Booking Calendar</h2>
+
+<div>
+  <label for="date">Select a date:</label>
+  <input type="date" id="date" [(ngModel)]="selectedDate">
+</div>
+
+<div *ngIf="selectedDate">
+  <label>Select time slot(s) for {{ selectedDate }}:</label><br>
+  <div *ngFor="let time of ['9:00 AM', '10:00 AM', '11:00 AM']">
+    <input type="checkbox" [value]="time" [checked]="selectedTimeSlots[selectedDate] && selectedTimeSlots[selectedDate].includes(time)" (change)="toggleTimeSlot(selectedDate, time)">
+    <label>{{time}}</label><br>
+  </div>
+</div>
+
+<div>
+  <label for="name">Customer Name:</label>
+  <input type="text" id="name" [(ngModel)]="customerName">
+</div>
+
+<button (click)="bookTimeSlots()">Book Time Slot(s)</button>
+
+<div *ngIf="timeSlots.length > 0">
+  <h3>Booked Time Slots</h3>
+  <ul>
+    <li *ngFor="let slot of timeSlots">{{ slot.date }} - {{ slot.time }} - {{ slot.customerName }}</li>
+  </ul>
+</div>
+<div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="formData.customerName">
+    <br>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" [(ngModel)]="formData.phoneNumber">
+    <br>
+    <label for="ownerName">ownerName:</label>
+    <input type="text" id="ownerName" [(ngModel)]="formData.ownerName">
+    <div>
+        <button (click)="register()">Register For function hall services</button>
+      </div>
+  </div>
+
+<div>
+    <button (click)="displayCustomerForBooking()">Display  Customer </button>
+    <div *ngFor="let item of dataofCustomerListondate; let i = index">
+      <div>
+        <span>{{ item.customerName }} -- {{ item.time }}
+         
+        </span>
+     
+        <button (click)="cancelcustomerbooking(item.customerName)">cancelcustomerbooking </button>
+  </div>

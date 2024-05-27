@@ -1,0 +1,19 @@
+<div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="formData.customerName">
+    <br>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" [(ngModel)]="formData.phoneNumber">
+    <br>
+    <label for="ownerName">ownerName:</label>
+    <input type="text" id="ownerName" [(ngModel)]="formData.ownerName">
+    <div>
+        <button (click)="register()">Register For Apt </button>
+      </div>
+  </div>
+<!-- Av services copy paste & security details with date compy paste -->
+<div>
+    <input type="apttask" id="apttask" [(ngModel)]="apttask">
+    <button (click)="adduserData()">adduserSecurityData</button>
+  </div>
+  <app-service-available></app-service-available>

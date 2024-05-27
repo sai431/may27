@@ -1,0 +1,46 @@
+<div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="formData.customerName">
+    <br>
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" [(ngModel)]="formData.phoneNumber">
+    <br>
+    <label for="ownerName">ownerName:</label>
+    <input type="text" id="ownerName" [(ngModel)]="formData.ownerName">
+    <div>
+        <button (click)="register()">Register For Gym services</button>
+      </div>
+  </div>
+  <div>
+    <input type="gymtask" id="gymtask" [(ngModel)]="gymtask">
+    <button (click)="adduserData()">adduserData</button>
+  </div>
+  <input type="text" id="newMachineName" [(ngModel)]="newMachineName">
+  <button (click)="addMachine(newMachineName)">Add Machine</button>
+ 
+
+  <div>
+    <button (click)="displayMachinesForBooking()">Display  Machine </button>
+    <div *ngFor="let item of dataofNewMachineList; let i = index">
+      <div>
+        <span>{{ item }}</span>
+     
+       
+  </div>
+<h2>Available Machines</h2>
+
+
+
+
+<h2>Machine Booking Status</h2>
+<ul>
+  <li *ngFor="let machine of dataofNewMachineList">
+    {{ machine }} 
+    
+  
+    <button (click)="toggleBookingStatus(machine)">
+   Availablity :: 
+    </button>
+  </li>
+</ul>
+
